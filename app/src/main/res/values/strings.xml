@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Running Dinner</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_main">Running Dinner</string>
+    <string name="title_activity_register">Running Dinner</string>
+</resources>

@@ -1,0 +1,355 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="de.rudi.activities.RegisterActivity">
+
+
+    <!-- Tabelle 1 Header -->
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tabelle1">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp">
+
+            <!-- Column 1 -->
+            <TextView
+                android:id="@+id/textRegister"
+                android:layout_height="fill_parent"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:text="Registrierung"
+                android:textColor="#35136a"
+                android:textSize="34dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/register"
+                android:gravity="center|right" />
+
+        </TableRow>
+
+        <TextView
+            android:id="@+id/textExplain"
+            android:layout_height="fill_parent"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:text="Angaben zur Person:"
+            android:textColor="#1875ac"
+            android:textSize="18dp"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center|left"
+            />
+
+        </TableLayout>
+
+    <!-- Tabelle 2 Angaben zur Person -->
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabelle2"
+        android:layout_below="@+id/tabelle1">
+
+        <TableRow
+            android:id="@+id/tableRow22"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <!-- Column 1 Vorname -->
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/vornameInput"
+                android:hint="Vorname"
+                android:textColorHint="#393a38"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="0dp"
+                android:textSize="16dip"
+                android:typeface="normal" />
+
+            <!-- Column 2 Nachname -->
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/nachnameInput"
+                android:hint="Nachname"
+                android:textColorHint="#393a38"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:textSize="16dip"
+                android:typeface="normal" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- Tabelle 3 Angaben zur Person -->
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabelle3"
+        android:layout_below="@+id/tabelle2">
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <!-- Column 1 Straße -->
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/strasseInput"
+                android:hint="Straße"
+                android:textColorHint="#393a38"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="0dp"
+                android:textSize="16dip"
+                android:typeface="normal" />
+
+            <!-- Column 2 Hausnummer -->
+            <EditText
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/hausnummerInput"
+                android:hint="Nr."
+                android:textColorHint="#393a38"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:textSize="16dip"
+                android:typeface="normal" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- Tabelle 4 Angaben zur Person -->
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabelle4"
+        android:layout_below="@+id/tabelle3">
+
+        <TableRow
+            android:id="@+id/tableRow23"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <!-- Column 1 PLZ -->
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/plzInput"
+                android:hint="PLZ"
+                android:textColorHint="#393a38"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="0dp"
+                android:textSize="16dip"
+                android:typeface="normal" />
+
+            <!-- Column 2 Stadt -->
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/stadtInput"
+                android:hint="Stadt"
+                android:textColorHint="#393a38"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:textSize="16dip"
+                android:typeface="normal" />
+        </TableRow>
+    </TableLayout>
+
+
+    <!-- Tabelle 5 Login Daten -->
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabelle5"
+        android:layout_below="@+id/tabelle4"
+        >
+
+        <TableRow
+            android:id="@+id/tableAngabeLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/textExplain2"
+                android:layout_height="fill_parent"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:text="Login-Daten:"
+                android:textColor="#1875ac"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <!-- Column 1 -->
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="E-Mail-Adresse"
+                android:textColorHint="#393a38"
+                android:textSize="16dip"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            >
+
+            <!-- Column 1 -->
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/usernameInput"
+                android:hint="Username"
+                android:textColorHint="#393a38"
+                android:layout_centerHorizontal="true"
+                android:textSize="16dip"
+                android:typeface="normal"
+                android:gravity="center|center_horizontal"
+               />
+        </TableRow>
+
+        </TableLayout>
+
+    <!-- Tabelle 6 Login Daten -->
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabelle6"
+        android:layout_below="@+id/tabelle5">
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            >
+
+            <!-- Column 1 -->
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/passwortInput"
+                android:hint="Passwort"
+                android:textColorHint="#393a38"
+                android:textSize="16dip"
+                android:gravity="center_horizontal"
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/passwortWdhInput"
+                android:hint="Passwort Wdh."
+                android:textColorHint="#393a38"
+                android:textSize="16dip"
+                android:gravity="center_horizontal"  />
+
+        </TableRow>
+
+    </TableLayout>
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tabelle6"
+                android:text="Registrieren"
+                android:id="@+id/registerButton"
+                android:background="#140033"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:typeface="normal"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="ABBRECHEN"
+                android:id="@+id/cancelButton"
+                android:background="#140033"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:typeface="normal"
+                android:textSize="16dp"
+                android:layout_below="@+id/registerButton"
+                android:textStyle="bold"
+                />
+
+</RelativeLayout>
+
+
+</ScrollView>
