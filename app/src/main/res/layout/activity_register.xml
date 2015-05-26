@@ -177,7 +177,7 @@
             <EditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="number"
                 android:id="@+id/plzInput"
                 android:hint="PLZ"
                 android:textColorHint="#393a38"
