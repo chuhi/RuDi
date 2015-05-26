@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:background="#D9D9D0"
+        android:background="@drawable/values"
         tools:ignore="MergeRootFrame">
     </FrameLayout>
 
