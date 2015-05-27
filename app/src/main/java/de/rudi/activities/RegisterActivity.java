@@ -19,8 +19,8 @@ import de.rudi.R;
 public class RegisterActivity extends Activity {
 
     //Text fields
-    private EditText mNachname;
     private EditText mVorname;
+    private EditText mNachname;
     private EditText mStrasse;
     private EditText mHausnummer;
     private EditText mPLZ;
@@ -39,10 +39,14 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mUsername =  (EditText) findViewById(R.id.usernameInput);
-        mNachname = (EditText) findViewById(R.id.nachnameInput);
         mVorname= (EditText) findViewById(R.id.vornameInput);
+        mNachname = (EditText) findViewById(R.id.nachnameInput);
+        mStrasse = (EditText) findViewById(R.id.strasseInput);
+        mHausnummer = (EditText) findViewById(R.id.hausnummerInput);
+        mPLZ = (EditText) findViewById(R.id.plzInput);
+        mStadt = (EditText) findViewById(R.id.stadtInput);
         mEmail= (EditText) findViewById(R.id.emailInput);
+        mUsername =  (EditText) findViewById(R.id.usernameInput);
         mPasswort = (EditText) findViewById(R.id.passwortInput);
         mPasswortWdh = (EditText) findViewById(R.id.passwortWdhInput);
         mRegister = (Button) findViewById(R.id.registerButton);
@@ -66,7 +70,6 @@ public class RegisterActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // Redirect to login activity
-                Toast.makeText(RegisterActivity.this,"Click",Toast.LENGTH_LONG).show();
                 check();
                 //Toast.makeText(RegisterActivity.this, "Registrierung erfolgreich!", Toast.LENGTH_LONG).show();
                 //Intent toLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -111,32 +114,31 @@ public class RegisterActivity extends Activity {
     //check() checks, if fields are filled correct
     public void check(){
         //check first name
-        String test = mVorname.getText().toString();
-        if (mVorname.getText() == null){
+        if (mVorname.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Vorname eingeben",Toast.LENGTH_LONG).show();
             return;
         }
 
         //check last name
-        if (mNachname == null){
+        if (mNachname.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Nachname eingeben",Toast.LENGTH_LONG).show();
             return;
         }
 
         //check Street
-        if (mStrasse == null){
+        if (mStrasse.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Strasse eingeben",Toast.LENGTH_LONG).show();
             return;
         }
 
         //check number
-        if (mHausnummer == null){
+        if (mHausnummer.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Hausnummer eingeben",Toast.LENGTH_LONG).show();
             return;
         }
 
         //check city code
-        if (mPLZ == null){
+        if (mPLZ.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte PLZ eingeben",Toast.LENGTH_LONG).show();
             return;
         } else {
@@ -150,8 +152,14 @@ public class RegisterActivity extends Activity {
             }
         }
 
+        //check city
+        if (mStrasse.getText().toString().isEmpty()){
+            Toast.makeText(RegisterActivity.this,"Bitte Stadt eingeben",Toast.LENGTH_LONG).show();
+            return;
+        }
+
         //check email
-        if (mEmail == null){
+        if (mEmail.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Mailadresse eingeben",Toast.LENGTH_LONG).show();
             return;
         } else {
@@ -171,7 +179,25 @@ public class RegisterActivity extends Activity {
             }
         }
 
-        //TODO: check more....
+        //check username
+        if (mUsername.getText().toString().isEmpty()){
+            Toast.makeText(RegisterActivity.this,"Bitte Username eingeben",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        //check password
+        if (mPasswortWdh.getText().toString().isEmpty()||mPasswort.getText().toString().isEmpty()){
+            Toast.makeText(RegisterActivity.this,"Bitte Passwort eingeben",Toast.LENGTH_LONG).show();
+            return;
+        } else {
+            String pass1 = mPasswort.getText().toString();
+            String pass2 = mPasswortWdh.getText().toString();
+            if (!pass1.equals(pass2)){
+                Toast.makeText(RegisterActivity.this,"Die Passwörter stimmen nicht überein",Toast.LENGTH_LONG).show();
+                return;
+            }
+        }
+
         Toast.makeText(RegisterActivity.this,"Registrierung erfolgreich",Toast.LENGTH_LONG);
         Intent toLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(toLoginActivity);
