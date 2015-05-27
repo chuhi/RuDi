@@ -337,7 +337,9 @@
                 android:layout_centerHorizontal="true"
                 android:typeface="normal"
                 android:textSize="16dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:clickable="false"
+                android:enabled="false" />
 
             <Button
                 android:layout_width="150dp"
