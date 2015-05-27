@@ -193,7 +193,7 @@ public class RegisterActivity extends Activity {
             String pass1 = mPasswort.getText().toString();
             String pass2 = mPasswortWdh.getText().toString();
             if (!pass1.equals(pass2)){
-                Toast.makeText(RegisterActivity.this,"Die Passwörter stimmen nicht überein",Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this,"Die Passw\u00f6rter stimmen nicht \u00fcberein",Toast.LENGTH_LONG).show();
                 return;
             }
         }
