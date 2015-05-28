@@ -69,11 +69,8 @@ public class RegisterActivity extends Activity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Redirect to login activity
+                // validate input and redirekt to login
                 check();
-                //Toast.makeText(RegisterActivity.this, "Registrierung erfolgreich!", Toast.LENGTH_LONG).show();
-                //Intent toLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class);
-                //startActivity(toLoginActivity);
             }
         });
 
@@ -142,14 +139,12 @@ public class RegisterActivity extends Activity {
             Toast.makeText(RegisterActivity.this,"Bitte PLZ eingeben",Toast.LENGTH_LONG).show();
             return;
         } else {
-            //check if citycode is Number
-            String cityString = mPLZ.getText().toString();
-            try {
-                int cityCode = Integer.parseInt(cityString);
-            } catch (NumberFormatException e){
-                Toast.makeText(RegisterActivity.this,"Bitte nur Nummern bei PLZ eingeben",Toast.LENGTH_LONG).show();
+            //check if citycode lenght is 5
+            if (mPLZ.getText().toString().length() != 5){
+                Toast.makeText(RegisterActivity.this,"Bitte 5-stellige PLZ eingeben",Toast.LENGTH_LONG).show();
                 return;
             }
+
         }
 
         //check city
@@ -198,10 +193,9 @@ public class RegisterActivity extends Activity {
             }
         }
 
-        Toast.makeText(RegisterActivity.this,"Registrierung erfolgreich",Toast.LENGTH_LONG);
+        Toast.makeText(RegisterActivity.this,"Registrierung erfolgreich",Toast.LENGTH_LONG).show();
         Intent toLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(toLoginActivity);
-        return;
     }
 
 }
