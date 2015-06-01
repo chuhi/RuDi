@@ -177,7 +177,7 @@
             <EditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="number"
                 android:id="@+id/plzInput"
                 android:hint="PLZ"
                 android:textColorHint="#393a38"
@@ -337,7 +337,9 @@
                 android:layout_centerHorizontal="true"
                 android:typeface="normal"
                 android:textSize="16dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:clickable="false"
+                android:enabled="false" />
 
             <Button
                 android:layout_width="150dp"
