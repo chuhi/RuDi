@@ -111,6 +111,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/back"
                     android:layout_margin="5dp"
+                    android:textColor="#2a2929"
                     />
             </TableRow>
 
@@ -131,33 +132,33 @@
                 android:gravity="center">
 
                 <!-- Column 1 Straße -->
-                <EditText
+                <TextView
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:id="@+id/strasseInput"
-                    android:hint="Straße"
-                    android:textColorHint="#393a38"
-                    android:gravity="center_horizontal"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/imageView"
-                    android:layout_marginTop="0dp"
-                    android:textSize="16dip"
-                    android:typeface="normal" />
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:typeface="normal"
+                    android:text="Mustermannstraße"
+                    android:layout_gravity="center"
+                    android:background="@drawable/back"
+                    android:layout_margin="5dp"
+                    android:textColor="#2a2929"
+                    />
 
                 <!-- Column 2 Hausnummer -->
-                <EditText
+                <TextView
                     android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:id="@+id/hausnummerInput"
-                    android:hint="Nr."
-                    android:textColorHint="#393a38"
-                    android:gravity="center_horizontal"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="16dip"
-                    android:typeface="normal" />
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:typeface="normal"
+                    android:text="1"
+                    android:layout_gravity="center"
+                    android:background="@drawable/back"
+                    android:layout_margin="5dp"
+                    android:textColor="#2a2929"
+                    />
             </TableRow>
         </TableLayout>
 
@@ -327,21 +328,51 @@
 
         </TableLayout>
 
-        <Button
-            android:layout_marginTop="20dp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+
+        <!-- Tabelle 1 Header -->
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tabelle8"
             android:layout_below="@+id/tabelle6"
-            android:text="Registrieren"
-            android:id="@+id/registerButton"
-            android:background="#140033"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:typeface="normal"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:clickable="false"
-            android:enabled="false" />
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_gravity="center">
+
+                <!-- Column 1 -->
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignRight="@+id/bearbeitenButton"
+                    android:src="@drawable/profil"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tabelle6"
+                    android:text="Bearbeiten"
+                    android:id="@+id/bearbeitenButton"
+                    android:background="#140033"
+                    android:textColor="#ffffff"
+                    android:typeface="normal"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:layout_gravity="center"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
 
 
     </RelativeLayout>
