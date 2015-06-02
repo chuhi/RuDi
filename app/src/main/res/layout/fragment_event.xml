@@ -1,9 +1,81 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="de.rudi.fragments.EventFragment">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gravity"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="Event fragment" />
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
 
-</FrameLayout>
+        >
+            <!-- Column 1 Kochen -->
+            <TextView
+                android:id="@+id/textEvent"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:text="Bevorstehende Events"
+                android:textColor="#35136a"
+                android:textSize="34dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="left"
+                android:paddingTop="15dp"
+                android:paddingLeft="15dp"
+                />
+
+        <!-- Tabelle Events -->
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tabelle1"
+            android:layout_below="@+id/textEvent"
+            android:paddingTop="15dp"
+            >
+
+        <View android:layout_height="2px" android:background="#b6b6b4"/>
+
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_margin="10dp"
+                >
+                <!-- Column 1 Kochen -->
+                <TextView
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:text="RuDi in Stuttgart"
+                    android:textColor="#CC0000"
+                    android:textSize="26dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
+                    />
+            </TableRow>
+
+             <!-- Textfeld Kochen -->
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="left"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:text="RuDi in Stuttgart"
+                    android:textColor="#CC0000"
+                    android:textSize="26dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
+                    />
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
