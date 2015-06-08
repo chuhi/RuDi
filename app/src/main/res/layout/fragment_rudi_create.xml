@@ -172,7 +172,7 @@
 
                     <!-- Column 1 PLZ -->
                     <EditText
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:inputType="number"
                         android:id="@+id/plzInput"
@@ -355,18 +355,6 @@
                 android:background="@drawable/back"
                 android:ems="10"
                 android:hint="Gericht"
-                android:padding="5dip"
-                android:textColorHint="#393a38"
-                android:gravity="center"
-                />
-
-            <EditText
-                android:id="@+id/kuechenhilfe"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/back"
-                android:hint="Name Deiner Küchenhilfe"
                 android:padding="5dip"
                 android:textColorHint="#393a38"
                 android:gravity="center"
