@@ -5,376 +5,228 @@
     android:background="@drawable/gravity"
     >
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="ebusiness.org.fragments.ProfileFragment">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="ebusiness.org.activities.ProfileActivity"
         >
 
-        <!-- Tabelle 1 Header -->
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/tabelle1"
-            >
-
-            <TableRow
-                android:id="@+id/tableRow1"
+            <!-- Tabelle 1 Header -->
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/tabelle1"
+                >
 
-                <!-- Column 1 -->
-                <TextView
-                    android:id="@+id/textRegister"
-                    android:layout_height="100dp"
+                <TableRow
+                    android:id="@+id/tableRow1"
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
-                    android:text="Dein Profil"
-                    android:textColor="#008aff"
-                    android:textSize="34dp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:gravity="center|center"
-                    android:paddingLeft="15dp"
-                    />
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
 
-                <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/imageView"
-                    android:src="@drawable/profil"
-                    android:paddingRight="15dp"
-                    />
+                    <!-- Column 1 -->
+                    <TextView
+                        android:id="@+id/textRegister"
+                        android:layout_height="100dp"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:text="Dein Profil"
+                        android:textColor="#008aff"
+                        android:textSize="34dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:gravity="center|center"
+                        android:paddingLeft="15dp"
+                        />
 
-                <View
-                    android:layout_height="6px"
-                    android:background="#b6b6b4"
-                    />
-
-            </TableRow>
-        </TableLayout>
-
-        <TextView
-            android:id="@+id/textExplain"
-            android:layout_below="@+id/tabelle1"
-            android:layout_height="fill_parent"
-            android:layout_width="0dip"
-            android:layout_weight="1"
-            android:text="Angaben zur Person:"
-            android:textColor="#6a6a6a"
-            android:textSize="22dp"
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:gravity="center|left"
-            />
+                    <ImageView
+                        android:layout_width="175dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/imageView"
+                        android:src="@drawable/profil"
+                        android:paddingRight="15dp"
+                        />
 
 
-        <!-- Tabelle 2 Angaben zur Person -->
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabelle2"
-            android:layout_below="@+id/tabelle1">
+                </TableRow>
+            </TableLayout>
 
-            <TableRow
-                android:id="@+id/tableRow22"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp">
-
-                <!-- Column 1 Vorname -->
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="40dp"
-                    android:gravity="center"
-                    android:textSize="18dp"
-                    android:typeface="normal"
-                    android:text="Max"
-                    android:textColor="#2a2929"
-                    android:layout_gravity="center"
-                    android:background="@drawable/back"
-                    />
-
-                <!-- Column 2 Nachname -->
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="40dp"
-                    android:gravity="center"
-                    android:textSize="20dp"
-                    android:typeface="normal"
-                    android:text="Mustermann"
-                    android:layout_gravity="center"
-                    android:background="@drawable/back"
-                    android:layout_margin="5dp"
-                    android:textColor="#2a2929"
-                    />
-            </TableRow>
-
-        </TableLayout>
-
-        <!-- Tabelle 3 Angaben zur Person -->
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabelle3"
-            android:layout_below="@+id/tabelle2">
-
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center">
-
-                <!-- Column 1 Straße -->
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="40dp"
-                    android:gravity="center"
-                    android:textSize="20dp"
-                    android:typeface="normal"
-                    android:text="Mustermannstraße"
-                    android:layout_gravity="center"
-                    android:background="@drawable/back"
-                    android:layout_margin="5dp"
-                    android:textColor="#2a2929"
-                    />
-
-                <!-- Column 2 Hausnummer -->
-                <TextView
-                    android:layout_width="75dp"
-                    android:layout_height="40dp"
-                    android:gravity="center"
-                    android:textSize="20dp"
-                    android:typeface="normal"
-                    android:text="1"
-                    android:layout_gravity="center"
-                    android:background="@drawable/back"
-                    android:layout_margin="5dp"
-                    android:textColor="#2a2929"
-                    />
-            </TableRow>
-        </TableLayout>
-
-        <!-- Tabelle 4 Angaben zur Person -->
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabelle4"
-            android:layout_below="@+id/tabelle3">
-
-            <TableRow
-                android:id="@+id/tableRow23"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center">
-
-                <!-- Column 1 PLZ -->
-                <EditText
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:id="@+id/plzInput"
-                    android:hint="PLZ"
-                    android:textColorHint="#393a38"
-                    android:gravity="center_horizontal"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/imageView"
-                    android:layout_marginTop="0dp"
-                    android:textSize="16dip"
-                    android:typeface="normal" />
-
-                <!-- Column 2 Stadt -->
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:id="@+id/stadtInput"
-                    android:hint="Stadt"
-                    android:textColorHint="#393a38"
-                    android:gravity="center_horizontal"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="16dip"
-                    android:typeface="normal" />
-            </TableRow>
-        </TableLayout>
-
-
-        <!-- Tabelle 5 Login Daten -->
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabelle5"
-            android:layout_below="@+id/tabelle4"
-            >
-
-            <TableRow
-                android:id="@+id/tableAngabeLogin"
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp">
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:layout_below="@+id/tabelle1">
 
-                <TextView
-                    android:id="@+id/textExplain2"
-                    android:layout_height="fill_parent"
-                    android:layout_width="0dip"
-                    android:layout_weight="1"
-                    android:text="Login-Daten:"
-                    android:textColor="#1875ac"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:gravity="center|left"
-                    />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow4"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center">
-
-                <!-- Column 1 -->
                 <EditText
-                    android:id="@+id/emailInput"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
                     android:inputType="textEmailAddress"
-                    android:hint="E-Mail-Adresse"
-                    android:textColorHint="#393a38"
-                    android:textSize="16dip"
-                    android:gravity="center_horizontal"
-                    android:layout_centerHorizontal="true"
-                    />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                >
-
-                <!-- Column 1 -->
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:id="@+id/usernameInput"
-                    android:hint="Username"
-                    android:textColorHint="#393a38"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="16dip"
-                    android:typeface="normal"
-                    android:gravity="center|center_horizontal"
-                    />
-            </TableRow>
-
-        </TableLayout>
-
-        <!-- Tabelle 6 Login Daten -->
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabelle6"
-            android:layout_below="@+id/tabelle5">
-
-            <TableRow
-                android:id="@+id/tableRow5"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                >
-
-                <!-- Column 1 -->
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:id="@+id/passwortInput"
-                    android:hint="Passwort"
-                    android:textColorHint="#393a38"
-                    android:textSize="16dip"
-                    android:gravity="center_horizontal"
-                    />
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:id="@+id/passwortWdhInput"
-                    android:hint="Passwort Wdh."
-                    android:textColorHint="#393a38"
-                    android:textSize="16dip"
-                    android:gravity="center_horizontal"  />
-
-            </TableRow>
-
-        </TableLayout>
-
-
-        <!-- Tabelle 1 Header -->
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/tabelle8"
-            android:layout_below="@+id/tabelle6"
-            >
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="10dp"
-                android:layout_gravity="center">
-
-                <!-- Column 1 -->
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_alignRight="@+id/bearbeitenButton"
-                    android:src="@drawable/edit"
+                    android:ems="10"
+                    android:id="@+id/emailFeld"
+                    android:hint="E-Mail Adresse"
+                    android:layout_below="@+id/geschlechtRadioGroup"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
                     android:gravity="center"
-                    android:layout_gravity="center"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/geschlechtRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/geschlechtText"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Männlich"
+                        android:id="@+id/maennlichButton"
+                        android:checked="false"
+                        android:layout_below="@+id/geschlechtText"
+                        android:layout_alignRight="@+id/geburtstagFeld"
+                        android:layout_alignEnd="@+id/geburtstagFeld"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#000000"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weiblich"
+                        android:id="@+id/weiblichButton"
+                        android:checked="false"
+                        android:layout_above="@+id/emailFeld"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#000000"/>
+
+                </RadioGroup>
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/vornameFeld"
+                    android:hint="Vorname"
+                    android:layout_below="@+id/nachnameFeld"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/nachnameFeld"
+                    android:hint="Nachname"
+                    android:layout_below="@+id/registrierungText"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="textPostalAddress"
+                    android:ems="10"
+                    android:id="@+id/strasseFeld"
+                    android:hint="Strasse"
+                    android:layout_below="@+id/vornameFeld"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="textPostalAddress"
+                    android:ems="10"
+                    android:id="@+id/hausnummerFeld"
+                    android:hint="Hausnummer"
+                    android:layout_below="@+id/vornameFeld"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/vornameFeld"
+                    android:layout_toEndOf="@+id/vornameFeld"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="textPostalAddress"
+                    android:ems="10"
+                    android:id="@+id/postleitzahlFeld"
+                    android:hint="Postleitzahl"
+                    android:layout_below="@+id/strasseFeld"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignRight="@+id/stadtFeld"
+                    android:layout_alignBottom="@+id/stadtFeld"
+                    android:layout_toRightOf="@+id/strasseFeld"
+                    android:layout_toEndOf="@+id/strasseFeld"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"
+                />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:inputType="textPostalAddress"
+                    android:ems="10"
+                    android:id="@+id/stadtFeld"
+                    android:hint="Stadt"
+                    android:layout_below="@+id/strasseFeld"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"
                     />
 
                 <Button
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tabelle6"
-                    android:text="Bearbeiten"
-                    android:id="@+id/bearbeitenButton"
-                    android:background="#140033"
-                    android:textColor="#ffffff"
-                    android:typeface="normal"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:clickable="false"
-                    android:enabled="false"
-                    android:layout_gravity="center"
-                    />
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="Bearbeiten"
+                android:id="@+id/bearbeitenButton"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentEnd="true"
+                android:background="#140033"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textExplain"
+                android:textSize="16dp"
+                android:typeface="normal"
+                android:textStyle="bold"
+                android:gravity="center"/>
 
-            </TableRow>
-        </TableLayout>
-
-
+        </LinearLayout>
 
     </RelativeLayout>
 
+    </FrameLayout>
 </ScrollView>
