@@ -3,11 +3,13 @@ package de.rudi.activities;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import de.rudi.R;
@@ -32,18 +34,28 @@ public class LoginActivity extends ActionBarActivity {
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = mUsername.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
+//                String username = mUsername.getText().toString().trim();
+//                String password = mPassword.getText().toString().trim();
+//
+//                // Implement user authentication here
+//                // Authentication succeeds when username equals password
+//                if (!username.equals("") && username.equals(password)) {
+//                    Toast.makeText(LoginActivity.this, "Login erfolgreich!", Toast.LENGTH_LONG).show();
+//                    Intent toMainActivity = new Intent(LoginActivity.this, MainActivity.class);
+//                    startActivity(toMainActivity);
+//                } else {
+//                    Toast.makeText(LoginActivity.this, "Login fehlgeschlagen!", Toast.LENGTH_LONG).show();
+//                }
+                login();
+            }
+        });
 
-                // Implement user authentication here
-                // Authentication succeeds when username equals password
-                if (!username.equals("") && username.equals(password)) {
-                    Toast.makeText(LoginActivity.this, "Login erfolgreich!", Toast.LENGTH_LONG).show();
-                    Intent toMainActivity = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(toMainActivity);
-                } else {
-                    Toast.makeText(LoginActivity.this, "Login fehlgeschlagen!", Toast.LENGTH_LONG).show();
-                }
+        //login should be on keyboard after inserting password
+        mPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                login();
+                return true;
             }
         });
 
@@ -72,5 +84,20 @@ public class LoginActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public final void login() {
+        String username = mUsername.getText().toString().trim();
+        String password = mPassword.getText().toString().trim();
+
+        // Implement user authentication here
+        // Authentication succeeds when username equals password
+        if (!username.equals("") && username.equals(password)) {
+            Toast.makeText(LoginActivity.this, "Login erfolgreich!", Toast.LENGTH_LONG).show();
+            Intent toMainActivity = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(toMainActivity);
+        } else {
+            Toast.makeText(LoginActivity.this, "Login fehlgeschlagen!", Toast.LENGTH_LONG).show();
+        }
     }
 }

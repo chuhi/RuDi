@@ -95,7 +95,8 @@
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="0dp"
                 android:textSize="16dip"
-                android:typeface="normal" />
+                android:typeface="normal"
+                android:nextFocusDown="@+id/nachnameInput" />
 
             <!-- Column 2 Nachname -->
             <EditText
@@ -109,7 +110,8 @@
                 android:gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
                 android:textSize="16dip"
-                android:typeface="normal" />
+                android:typeface="normal"
+                android:nextFocusDown="@+id/strasseInput" />
         </TableRow>
 
     </TableLayout>
@@ -142,7 +144,8 @@
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="0dp"
                 android:textSize="16dip"
-                android:typeface="normal" />
+                android:typeface="normal"
+                android:nextFocusDown="@+id/hausnummerInput"/>
 
             <!-- Column 2 Hausnummer -->
             <EditText
@@ -155,7 +158,8 @@
                 android:gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
                 android:textSize="16dip"
-                android:typeface="normal" />
+                android:typeface="normal"
+                android:nextFocusDown="@+id/plzInput"/>
         </TableRow>
     </TableLayout>
 
@@ -186,7 +190,8 @@
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="0dp"
                 android:textSize="16dip"
-                android:typeface="normal" />
+                android:typeface="normal"
+                android:nextFocusDown="@+id/stadtInput"/>
 
             <!-- Column 2 Stadt -->
             <EditText
@@ -200,7 +205,8 @@
                 android:gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
                 android:textSize="16dip"
-                android:typeface="normal" />
+                android:typeface="normal"
+                android:nextFocusDown="@+id/emailInput"/>
         </TableRow>
     </TableLayout>
 
@@ -253,7 +259,7 @@
                 android:textSize="16dip"
                 android:gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
-                />
+                android:nextFocusDown="@+id/usernameInput"/>
         </TableRow>
 
         <TableRow
@@ -277,7 +283,7 @@
                 android:textSize="16dip"
                 android:typeface="normal"
                 android:gravity="center|center_horizontal"
-               />
+                android:nextFocusDown="@+id/registerPasswortInput"/>
         </TableRow>
 
         </TableLayout>
@@ -303,12 +309,12 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:id="@+id/passwortInput"
+                android:id="@+id/registerPasswortInput"
                 android:hint="Passwort"
                 android:textColorHint="#393a38"
                 android:textSize="16dip"
                 android:gravity="center_horizontal"
-                />
+                android:nextFocusDown="@+id/passwortWdhInput"/>
 
             <EditText
                 android:layout_width="0dp"
@@ -319,7 +325,8 @@
                 android:hint="Passwort Wdh."
                 android:textColorHint="#393a38"
                 android:textSize="16dip"
-                android:gravity="center_horizontal"  />
+                android:gravity="center_horizontal"
+                android:imeOptions="actionSend"/>
 
         </TableRow>
 

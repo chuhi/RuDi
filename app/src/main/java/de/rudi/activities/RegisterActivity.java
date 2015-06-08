@@ -2,16 +2,15 @@ package de.rudi.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import de.rudi.R;
@@ -47,20 +46,29 @@ public class RegisterActivity extends Activity {
         mStadt = (EditText) findViewById(R.id.stadtInput);
         mEmail= (EditText) findViewById(R.id.emailInput);
         mUsername =  (EditText) findViewById(R.id.usernameInput);
-        mPasswort = (EditText) findViewById(R.id.passwortInput);
+        mPasswort = (EditText) findViewById(R.id.registerPasswortInput);
         mPasswortWdh = (EditText) findViewById(R.id.passwortWdhInput);
         mRegister = (Button) findViewById(R.id.registerButton);
         mCancel = (Button) findViewById(R.id.cancelButton);
 
-        mPasswortWdh.setOnFocusChangeListener(new OnFocusChangeListener() {
+//        mPasswortWdh.setOnFocusChangeListener(new OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if (!hasFocus) {
+//                    String pass1 = mPasswort.getText().toString();
+//                    String pass2 = mPasswortWdh.getText().toString();
+//                    //bPasswort = pass1.equals(pass2);
+//                    //mRegister.setEnabled(bEmail && bPasswort);
+//                }
+//            }
+//        });
+
+        //register after finishing Passwords
+        mPasswortWdh.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    String pass1 = mPasswort.getText().toString();
-                    String pass2 = mPasswortWdh.getText().toString();
-                    //bPasswort = pass1.equals(pass2);
-                    //mRegister.setEnabled(bEmail && bPasswort);
-                }
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                check();
+                return true;
             }
         });
 
@@ -113,49 +121,57 @@ public class RegisterActivity extends Activity {
         //check first name
         if (mVorname.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Vorname eingeben",Toast.LENGTH_LONG).show();
+            mVorname.requestFocus();
             return;
         }
 
         //check last name
         if (mNachname.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Nachname eingeben",Toast.LENGTH_LONG).show();
+            mNachname.requestFocus();
             return;
         }
 
         //check Street
         if (mStrasse.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Strasse eingeben",Toast.LENGTH_LONG).show();
+            mStrasse.requestFocus();
             return;
         }
 
         //check number
         if (mHausnummer.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Hausnummer eingeben",Toast.LENGTH_LONG).show();
+            mHausnummer.requestFocus();
             return;
         }
 
         //check city code
         if (mPLZ.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte PLZ eingeben",Toast.LENGTH_LONG).show();
+            mPLZ.requestFocus();
             return;
         } else {
             //check if citycode lenght is 5
             if (mPLZ.getText().toString().length() != 5){
                 Toast.makeText(RegisterActivity.this,"Bitte 5-stellige PLZ eingeben",Toast.LENGTH_LONG).show();
+                mPLZ.requestFocus();
                 return;
             }
 
         }
 
         //check city
-        if (mStrasse.getText().toString().isEmpty()){
+        if (mStadt.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Stadt eingeben",Toast.LENGTH_LONG).show();
+            mStadt.requestFocus();
             return;
         }
 
         //check email
         if (mEmail.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Mailadresse eingeben",Toast.LENGTH_LONG).show();
+            mEmail.requestFocus();
             return;
         } else {
 
@@ -170,6 +186,7 @@ public class RegisterActivity extends Activity {
 
             if (!(getMail.matches(Expn) && getMail.length() > 0)) {
                 Toast.makeText(RegisterActivity.this, "Bitte Mailadresse korrigieren", Toast.LENGTH_LONG).show();
+                mEmail.requestFocus();
                 return;
             }
         }
@@ -177,18 +194,21 @@ public class RegisterActivity extends Activity {
         //check username
         if (mUsername.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Username eingeben",Toast.LENGTH_LONG).show();
+            mUsername.requestFocus();
             return;
         }
 
         //check password
         if (mPasswortWdh.getText().toString().isEmpty()||mPasswort.getText().toString().isEmpty()){
             Toast.makeText(RegisterActivity.this,"Bitte Passwort eingeben",Toast.LENGTH_LONG).show();
+            mPasswort.requestFocus();
             return;
         } else {
             String pass1 = mPasswort.getText().toString();
             String pass2 = mPasswortWdh.getText().toString();
             if (!pass1.equals(pass2)){
                 Toast.makeText(RegisterActivity.this,"Die Passw\u00f6rter stimmen nicht \u00fcberein",Toast.LENGTH_LONG).show();
+                mPasswortWdh.requestFocus();
                 return;
             }
         }
