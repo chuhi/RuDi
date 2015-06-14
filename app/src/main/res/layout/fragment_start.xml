@@ -34,19 +34,15 @@
                     android:id="@+id/tableRow1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="10dp">
+                    android:gravity="center">
 
                     <!-- Column 1 -->
-
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="150dp"
                         android:id="@+id/imageView"
                         android:src="@drawable/logohw"
-                        android:paddingRight="15dp"
-                        android:layout_weight=".6" />
-
-
+                        />
                 </TableRow>
             </TableLayout>
 
@@ -55,7 +51,6 @@
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:paddingTop="15dp"
                 android:layout_below="@+id/tabelle1"
                 android:weightSum="1"
                 android:id="@+id/tabelle7">
@@ -69,15 +64,24 @@
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:gravity="center|center"
+                        >
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Hallo Helen!  \nWonach steht dir der Sinn?"
+                            android:text="Herzlich Willkommen \nbei Running Dinner!"
                             android:id="@+id/welcomeText"
-                            android:layout_column="26" />
+                            android:layout_column="26"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="#1875ac"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="15dp"
+                            />
+
                     </TableRow>
 
                     <TableRow
@@ -86,11 +90,16 @@
 
                         <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="80dp"
+                            android:layout_height="75dp"
+                            android:layout_marginTop="10dp"
                             android:text="Was ist RuDi?"
                             android:id="@+id/bAbout"
                             android:layout_column="26"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:textSize="16dp"
+                            android:background="#1875ac"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"/>
 
                     </TableRow>
 
@@ -104,12 +113,18 @@
 
                         <Button
                             style="?android:attr/buttonStyleSmall"
+                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="75dp"
-                            android:text="RuDi finden"
+                            android:text="RuDi suchen"
                             android:id="@+id/bEventFinden"
                             android:layout_column="26"
-                            android:layout_weight=".5" />
+                            android:layout_weight=".5"
+                            android:textSize="16dp"
+                            android:background="#1875ac"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            />
 
                     </TableRow>
 
@@ -119,12 +134,18 @@
 
                         <Button
                             style="?android:attr/buttonStyleSmall"
+                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="75dp"
                             android:text="RuDi anlegen"
                             android:id="@+id/bCreateRuDi"
                             android:layout_column="26"
-                            android:layout_weight=".5" />
+                            android:layout_weight=".5"
+                            android:textSize="16dp"
+                            android:background="#1875ac"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            />
                     </TableRow>
 
                     <TableRow
@@ -133,12 +154,17 @@
 
                         <Button
                             style="?android:attr/buttonStyleSmall"
+                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="75dp"
-                            android:text="Profil"
+                            android:text="Dein Profil"
                             android:id="@+id/bProfil"
                             android:layout_column="26"
-                            android:layout_weight=".5" />
+                            android:layout_weight=".5"
+                            android:textSize="16dp"
+                            android:background="#1875ac"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold" />
                     </TableRow>
                 </TableLayout>
 
