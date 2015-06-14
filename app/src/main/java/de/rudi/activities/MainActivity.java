@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             }
         };
 
-        String[] fragmentTitles = new String[]{"Home", "Profil", "Events", "RuDi anlegen", "Logout"};
+        String[] fragmentTitles = new String[]{"Home", "Profil", "Dein RuDi", "RuDi anlegen", "RuDi suchen", "Logout"};
 
         // Set the adapter for the list view
         drawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, fragmentTitles));
@@ -112,22 +112,29 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             ).commit();
         }
 
-        // Call fragment Events
-        if (position == 2) {
+        // Call fragment Dein RuDi
+        /*if (position == 2) {
             fragmentManager.beginTransaction().replace(
-                    R.id.container, new EventFragment()
+                    R.id.container, new RudiShowFragment()
             ).commit();
-        }
+        }*/
+
+        // Call fragment RuDi suchen
+        /*if (position == 3) {
+            fragmentManager.beginTransaction().replace(
+                    R.id.container, new RudiSearchFragment()
+            ).commit();
+        }*/
 
         // Call fragment RuDi anlegen
-        if (position == 3) {
+        if (position == 4) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new RudiCreateFragment()
             ).commit();
         }
 
         // Logout
-        if (position == 4) {
+        if (position == 5) {
             Intent toLoginActivity = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(toLoginActivity);
         }

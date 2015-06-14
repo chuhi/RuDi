@@ -32,7 +32,9 @@
                     android:id="@+id/tableRow1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="10dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
 
                     <!-- Column 1 -->
                     <TextView
@@ -46,41 +48,80 @@
                         android:textStyle="bold"
                         android:layout_gravity="center"
                         android:gravity="center|center"
-                        android:paddingLeft="15dp"
                         />
 
                     <ImageView
-                        android:layout_width="175dp"
+                        android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:id="@+id/imageView"
                         android:src="@drawable/profil"
-                        android:paddingRight="15dp"
+                        android:layout_weight="200"
+                        android:gravity="right|fill"
                         />
-
-
                 </TableRow>
             </TableLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
                 android:gravity="center"
                 android:paddingTop="15dp"
                 android:layout_below="@+id/tabelle1">
 
-                <EditText
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:inputType="textEmailAddress"
-                    android:ems="10"
-                    android:id="@+id/emailFeld"
-                    android:hint="E-Mail Adresse"
-                    android:layout_below="@+id/geschlechtRadioGroup"
+                <TextView
+                    android:id="@+id/textExplain"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:text="Angaben zur Person:"
+                    android:textColor="#140033"
+                    android:textSize="18dp"
                     android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/vornameFeld"
+                    android:hint="Max"
+                    android:layout_below="@+id/nachnameFeld"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/back"
                     android:gravity="center"
+                    android:textColorHint="#333333"
                     />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/nachnameFeld"
+                    android:hint="Mustermann"
+                    android:layout_below="@+id/registrierungText"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"
+                    android:textColorHint="#333333"/>
+                </TableRow>
 
                 <RadioGroup
                     android:id="@+id/geschlechtRadioGroup"
@@ -88,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/geschlechtText"
                     android:orientation="horizontal"
-                    android:paddingTop="15dp">
+                    android:paddingTop="5dp">
 
                     <RadioButton
                         android:layout_width="wrap_content"
@@ -99,8 +140,10 @@
                         android:layout_below="@+id/geschlechtText"
                         android:layout_alignRight="@+id/geburtstagFeld"
                         android:layout_alignEnd="@+id/geburtstagFeld"
-                        android:layout_marginTop="5dp"
-                        android:textColor="#000000"/>
+                        android:layout_marginTop="10dp"
+                        android:textColor="#333333"
+                        android:textSize="7pt"
+                        />
 
                     <RadioButton
                         android:layout_width="wrap_content"
@@ -109,77 +152,69 @@
                         android:id="@+id/weiblichButton"
                         android:checked="false"
                         android:layout_above="@+id/emailFeld"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginLeft="15dp"
-                        android:textColor="#000000"/>
+                        android:textColor="#333333"
+                        android:textSize="7pt"/>
 
                 </RadioGroup>
 
-                <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/vornameFeld"
-                    android:hint="Vorname"
-                    android:layout_below="@+id/nachnameFeld"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/back"
-                    android:gravity="center"/>
+
+                <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="40dp"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/nachnameFeld"
-                    android:hint="Nachname"
-                    android:layout_below="@+id/registrierungText"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/back"
-                    android:gravity="center"/>
-
-                <EditText
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
                     android:layout_height="40dp"
                     android:inputType="textPostalAddress"
                     android:ems="10"
                     android:id="@+id/strasseFeld"
-                    android:hint="Strasse"
+                    android:hint="Maxstraße"
                     android:layout_below="@+id/vornameFeld"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/back"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:textColorHint="#333333"
+                    />
 
                 <EditText
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="3"
                     android:layout_height="40dp"
                     android:inputType="textPostalAddress"
                     android:ems="10"
                     android:id="@+id/hausnummerFeld"
-                    android:hint="Hausnummer"
+                    android:hint="10"
                     android:layout_below="@+id/vornameFeld"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_toRightOf="@+id/vornameFeld"
                     android:layout_toEndOf="@+id/vornameFeld"
                     android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/back"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:textColorHint="#333333"/>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                 <EditText
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="2"
                     android:layout_height="40dp"
                     android:inputType="textPostalAddress"
                     android:ems="10"
                     android:id="@+id/postleitzahlFeld"
-                    android:hint="Postleitzahl"
+                    android:hint="12345"
                     android:layout_below="@+id/strasseFeld"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
@@ -190,30 +225,90 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/back"
                     android:gravity="center"
+                    android:textColorHint="#333333"
                 />
 
                 <EditText
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
                     android:layout_height="40dp"
                     android:inputType="textPostalAddress"
                     android:ems="10"
                     android:id="@+id/stadtFeld"
-                    android:hint="Stadt"
+                    android:hint="Musterstadt"
                     android:layout_below="@+id/strasseFeld"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/back"
                     android:gravity="center"
+                    android:textColorHint="#333333"
+                    />
+
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/textExplain2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:text="Daten zur Anmeldung:"
+                    android:textColor="#140033"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:id="@+id/emailFeld"
+                    android:hint="max.mustermann@test.de"
+                    android:layout_below="@+id/geschlechtRadioGroup"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"
+                    android:textColorHint="#333333"
+                    />
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/usernameFeld"
+                    android:hint="max1990"
+                    android:layout_below="@+id/geschlechtRadioGroup"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"
+                    android:textColorHint="#333333"
+                    />
+
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:text="Änderungen sichern"
+                    android:id="@+id/saveButton2"
+                    android:background="#1875ac"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:typeface="normal"
+                    android:textSize="16dp"
+                    android:layout_below="@+id/registerButton"
+                    android:textStyle="bold"
                     />
 
                 <Button
                 android:layout_width="200dp"
-                android:layout_height="40dp"
-                android:text="Bearbeiten"
-                android:id="@+id/bearbeitenButton"
+                android:layout_height="50dp"
+                android:text="Passwort ändern"
+                android:id="@+id/chancePasswordButton"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_alignParentEnd="true"
                 android:background="#140033"
                 android:textColor="#ffffff"

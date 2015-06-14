@@ -7,17 +7,20 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:background="@drawable/gravity"
         >
 
         <!-- Herzlich Willkommen Bild -->
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:id="@+id/imageHWnnn"
             android:src="@drawable/logohw"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
             />
 
         <!-- Tabelle Kochen -->
@@ -27,8 +30,20 @@
             android:layout_gravity="center_horizontal"
             android:id="@+id/tabelle1"
             android:layout_below="@+id/imageHWnnn"
-            android:layout_margin="0dp"
             >
+
+            <TextView
+                android:id="@+id/Überschrift"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:text="Was ist Running Dinner?"
+                android:textColor="#1875ac"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center|center"
+                />
 
             <View android:layout_height="2px" android:background="#b6b6b4"/>
 
@@ -36,7 +51,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="left"
-                android:layout_margin="10dp"
+                android:layout_marginTop="15dp"
                 >
                 <!-- Column 1 Bild -->
                 <ImageView
@@ -44,7 +59,6 @@
                     android:layout_height="40dp"
                     android:id="@+id/imageView"
                     android:src="@drawable/cookn"
-                    android:layout_margin="0dp"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="left"/>
 
@@ -55,7 +69,7 @@
                     android:layout_width="fill_parent"
                     android:text="Kochen"
                     android:textColor="#1875ac"
-                    android:textSize="26dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     android:layout_marginLeft="15dp"
                     android:layout_centerHorizontal="true"
@@ -73,8 +87,9 @@
             android:inputType="textMultiLine"
             android:text="Drei Gänge kreuz und quer durch Deine Stadt. Spaß mit Deinen Freunden und neuen Leuten. Kochen und Essen bei Dir zu Hause und woanders. \n\nGekocht wird in 2er Teams und jeder Gang wird in einer anderen Küche serviert."
             android:textColor="#333333"
-            android:textSize="18dp"
-            android:layout_margin="10dp"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center|left"
             android:layout_below="@+id/tabelle1"
             />
@@ -86,14 +101,15 @@
             android:layout_gravity="center_horizontal"
             android:id="@+id/tabelle2"
             android:layout_below="@+id/textExplain"
-            android:layout_margin="0dp"
             >
+
             <View android:layout_height="2px" android:background="#b6b6b4"/>
+
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="left"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
                 >
                 <!-- Column 1 Bild -->
                 <ImageView
@@ -112,7 +128,7 @@
                     android:layout_width="fill_parent"
                     android:text="Essen"
                     android:textColor="#1875ac"
-                    android:textSize="26dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     android:layout_marginLeft="15dp"
                     android:layout_centerHorizontal="true"
@@ -130,8 +146,8 @@
             android:inputType="textMultiLine"
             android:text="Melde Dich an, suche Dir ein Running Dinner aus und lerne mit einem netten Kochpartner gemeinsam neue Leute aus Deiner Stadt kennen. \n\nZusammen könnt ihr Eure persönliche Route starten und fremde Küchen rocken. Und Euch über das Lob der eigenen Gäste freuen."
             android:textColor="#333333"
-            android:textSize="18dp"
-            android:layout_margin="10dp"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
             android:gravity="center|left"
             android:layout_below="@+id/tabelle2"
             />
@@ -139,17 +155,18 @@
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:id="@+id/tabelle3"
             android:layout_below="@+id/textExplain1"
-            android:layout_margin="0dp"
+            android:layout_marginTop="10dp"
             >
+
             <View android:layout_height="2px" android:background="#b6b6b4"/>
+
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="left"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
                 >
 
                 <!-- Column 1 Bild -->
@@ -160,7 +177,8 @@
                     android:src="@drawable/partyn"
                     android:layout_margin="0dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_gravity="left"/>
+                    android:layout_gravity="left"
+                    />
 
 
                 <!-- Column 2 Party -->
@@ -169,7 +187,7 @@
                     android:layout_width="fill_parent"
                     android:text="Party"
                     android:textColor="#1875ac"
-                    android:textSize="26dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     android:layout_marginLeft="15dp"
                     android:layout_centerHorizontal="true"
@@ -187,8 +205,8 @@
             android:inputType="textMultiLine"
             android:text="Die After-Dinner-Party ist Deine Chance, alle Teilnehmer wiederzusehen und gleichzeitig bei cooler Musik und lässigen Drinks zu feiern, Rezepte austauschen oder Nachtreffen zu planen."
             android:textColor="#333333"
-            android:textSize="18dp"
-            android:layout_margin="10dp"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
             android:gravity="center|left"
             android:layout_below="@+id/tabelle3"
             />
