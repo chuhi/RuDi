@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             }
         };
 
-        String[] fragmentTitles = new String[]{"Home", "Profil", "Dein RuDi", "RuDi anlegen", "RuDi suchen", "Logout"};
+        String[] fragmentTitles = new String[]{"Home", "Was ist RuDi?", "Dein Profil", "Dein RuDi", "RuDi suchen", "RuDi anlegen", "Logout"};
 
         // Set the adapter for the list view
         drawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, fragmentTitles));
@@ -98,31 +98,31 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         FragmentManager fragmentManager = getFragmentManager();
 
-        // Call fragment Home
+        // Call fragment Start
         if (position == 0) {
+            fragmentManager.beginTransaction().replace(
+                    R.id.container, new StartFragment()
+            ).commit();
+        }
+
+        // Call fragment About
+        if (position == 1) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new HomeFragment()
             ).commit();
         }
-
+        
         // Call fragment Profil
-        if (position == 1) {
+        if (position == 2) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new ProfilFragment()
             ).commit();
         }
 
         // Call fragment Dein RuDi
-        /*if (position == 2) {
-            fragmentManager.beginTransaction().replace(
-                    R.id.container, new RudiShowFragment()
-            ).commit();
-        }*/
-
-        // Call fragment RuDi suchen
         /*if (position == 3) {
             fragmentManager.beginTransaction().replace(
-                    R.id.container, new RudiSearchFragment()
+                    R.id.container, new RudiShowFragment()
             ).commit();
         }*/
 
@@ -132,9 +132,17 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                     R.id.container, new RudiCreateFragment()
             ).commit();
         }
-
-        // Logout
+        
+        /* Call fragment RuDi Suchen
         if (position == 5) {
+            fragmentManager.beginTransaction().replace(
+                    R.id.container, new RudiSearchFragment()
+            ).commit();
+        }
+        */
+        
+        // Logout
+        if (position == 6) {
             Intent toLoginActivity = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(toLoginActivity);
         }

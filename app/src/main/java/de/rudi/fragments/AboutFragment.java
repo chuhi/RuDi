@@ -12,10 +12,10 @@ import de.rudi.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class AboutFragment extends Fragment {
 
 
-    public HomeFragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
