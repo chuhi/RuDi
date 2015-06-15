@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction().add(R.id.container, new AboutFragment()).commit();
+            getFragmentManager().beginTransaction().add(R.id.container, new StartFragment()).commit();
         }
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

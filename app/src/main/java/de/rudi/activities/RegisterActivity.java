@@ -119,6 +119,13 @@ public class RegisterActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed(){
+        //shows dialog if Back-Button pressed
+        Dialog dialog = setDialog();
+        dialog.show();
+    }
+
     public Dialog setDialog(){
         //create dialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
