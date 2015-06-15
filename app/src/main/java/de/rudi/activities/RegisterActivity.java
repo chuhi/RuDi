@@ -1,6 +1,9 @@
 package de.rudi.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -85,9 +88,9 @@ public class RegisterActivity extends Activity {
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Redirect to login activity
-                Intent toLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(toLoginActivity);
+                // show dialog
+                Dialog dialog = setDialog();
+                dialog.show();
             }
         });
     }
@@ -114,6 +117,31 @@ public class RegisterActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public Dialog setDialog(){
+        //create dialog
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Abbrechen");
+        dialogBuilder.setMessage("Wollen sie wirklich Abbrechen?");
+        dialogBuilder.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Redirect to login activity
+                Intent toLoginActivity = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(toLoginActivity);
+            }
+        });
+        dialogBuilder.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //closes Dialog without other actions
+            }
+        });
+
+        // create dialog
+        Dialog dialog = dialogBuilder.create();
+        return dialog;
     }
 
     //check() checks, if fields are filled correct
