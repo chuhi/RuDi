@@ -71,6 +71,46 @@
                 android:paddingTop="15dp"
                 android:layout_below="@+id/tabelle1">
 
+
+                <TextView
+                    android:id="@+id/textExplain2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:text="Daten zur Anmeldung:"
+                    android:textColor="#140033"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
+
+                <EditText
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:id="@+id/usernameFeld"
+                    android:hint="max1990"
+                    android:layout_below="@+id/geschlechtRadioGroup"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:textColorHint="#333333"
+                    android:clickable="false"
+                    android:editable="false" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:id="@+id/emailFeld"
+                    android:hint="max.mustermann@test.de"
+                    android:layout_below="@+id/geschlechtRadioGroup"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/back"
+                    android:gravity="center"
+                    android:textColorHint="#333333"
+                    />
+
                 <TextView
                     android:id="@+id/textExplain"
                     android:layout_height="wrap_content"
@@ -249,10 +289,10 @@
                 </TableRow>
 
                 <TextView
-                    android:id="@+id/textExplain2"
+                    android:id="@+id/textExplain3"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
-                    android:text="Daten zur Anmeldung:"
+                    android:text="Deine Vorlieben:"
                     android:textColor="#140033"
                     android:textSize="18dp"
                     android:layout_marginTop="20dp"
@@ -260,31 +300,69 @@
                     android:layout_gravity="center"
                     />
 
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/tabelle3"
+                    >
+
+                    <!-- Tabelle 2: Eigenschaften links-->
+                    <TableRow
+                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        >
+
+                    <TableLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" >
+
+                        <CheckBox
+                            android:id="@+id/veganCheckBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="vegan"
+                            android:textSize="7pt"
+                            android:layout_marginTop="5dp"
+                            />
+
+                        <CheckBox
+                            android:id="@+id/vegetarischCheckBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="vegetarisch"
+                            android:textSize="7pt"
+                            />
+                     </TableLayout>
+                </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/textExplain4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:text="Deine Allergien:"
+                    android:textColor="#140033"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
+
+                <!-- Tabelle 2: Thema -->
                 <EditText
+                    android:id="@+id/nameGericht"
+                    android:inputType="textMultiLine"
                     android:layout_width="fill_parent"
                     android:layout_height="40dp"
-                    android:inputType="textEmailAddress"
-                    android:ems="10"
-                    android:id="@+id/emailFeld"
-                    android:hint="max.mustermann@test.de"
-                    android:layout_below="@+id/geschlechtRadioGroup"
-                    android:layout_marginTop="10dp"
+                    android:hint="Allergien"
+                    android:textColorHint="#393a38"
+                    android:gravity="left"
+                    android:paddingLeft="8dip"
+                    android:paddingTop="8dip"
                     android:background="@drawable/back"
-                    android:gravity="center"
-                    android:textColorHint="#333333"
-                    />
-                <EditText
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:inputType="text"
-                    android:ems="10"
-                    android:id="@+id/usernameFeld"
-                    android:hint="max1990"
-                    android:layout_below="@+id/geschlechtRadioGroup"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/back"
-                    android:gravity="center"
-                    android:textColorHint="#333333"
+                    android:layout_marginTop="15dp"
                     />
 
                 <Button
