@@ -105,10 +105,6 @@
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"></TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <Button
@@ -117,7 +113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="75dp"
                             android:text="RuDi suchen"
-                            android:id="@+id/bEventFinden"
+                            android:id="@+id/bFindRuDi"
                             android:layout_column="26"
                             android:layout_weight=".5"
                             android:textSize="16dp"
@@ -158,7 +154,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="75dp"
                             android:text="Deine RuDi's"
-                            android:id="@+id/ShowYourRuDi"
+                            android:id="@+id/bYourRuDi"
                             android:layout_column="26"
                             android:layout_weight=".5"
                             android:textSize="16dp"

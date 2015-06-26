@@ -120,27 +120,27 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         }
 
         // Call fragment Dein RuDi
-        /*if (position == 3) {
+        if (position == 3) {
             fragmentManager.beginTransaction().replace(
-                    R.id.container, new RudiShowFragment()
+                    R.id.container, new YourRuDiFragment()
             ).commit();
-        }*/
+        }
+
+        // Call fragment RuDi Suchen
+        if (position == 5) {
+            fragmentManager.beginTransaction().replace(
+                    R.id.container, new RuDiSearchFragment()
+            ).commit();
+        }
 
         // Call fragment RuDi anlegen
-        if (position == 4) {
+        if (position == 5) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new RudiCreateFragment()
             ).commit();
         }
-        
-        /* Call fragment RuDi Suchen
-        if (position == 5) {
-            fragmentManager.beginTransaction().replace(
-                    R.id.container, new RudiSearchFragment()
-            ).commit();
-        }
-        */
-        
+
+
         // Logout
         if (position == 6) {
             Intent toLoginActivity = new Intent(MainActivity.this, LoginActivity.class);
