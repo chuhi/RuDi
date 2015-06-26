@@ -3,7 +3,15 @@
     android:layout_height="match_parent" tools:context="de.rudi.fragments.RuDiSearchFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:layout_gravity="left|top"
+        android:src="@drawable/rudi_finden"
+        android:minHeight="568dp"
+        android:minWidth="320dp"
+        android:nestedScrollingEnabled="false" />
 
 </FrameLayout>

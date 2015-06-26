@@ -54,18 +54,6 @@ public class RegisterActivity extends Activity {
         mRegister = (Button) findViewById(R.id.registerButton);
         mCancel = (Button) findViewById(R.id.cancelButton);
 
-//        mPasswortWdh.setOnFocusChangeListener(new OnFocusChangeListener() {
-//            @Override
-//            public void onFocusChange(View v, boolean hasFocus) {
-//                if (!hasFocus) {
-//                    String pass1 = mPasswort.getText().toString();
-//                    String pass2 = mPasswortWdh.getText().toString();
-//                    //bPasswort = pass1.equals(pass2);
-//                    //mRegister.setEnabled(bEmail && bPasswort);
-//                }
-//            }
-//        });
-
         //register after finishing Passwords
         mPasswortWdh.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override

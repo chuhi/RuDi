@@ -150,4 +150,11 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         drawerList.setItemChecked(position, true);
         drawerLayout.closeDrawer(drawerList);
     }
+
+    @Override
+    public void onBackPressed(){
+        getFragmentManager().beginTransaction().replace(
+                R.id.container, new StartFragment()
+        ).commit();
+    }
 }
