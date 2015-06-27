@@ -81,32 +81,36 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="text"
                 android:id="@+id/vornameInput"
                 android:hint="Vorname"
                 android:textColorHint="#393a38"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="0dp"
                 android:textSize="16dip"
                 android:typeface="normal"
+
                 android:nextFocusDown="@+id/nachnameInput" />
 
             <!-- Column 2 Nachname -->
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="text"
                 android:id="@+id/nachnameInput"
                 android:hint="Nachname"
                 android:textColorHint="#393a38"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:textSize="16dip"
                 android:typeface="normal"
+                android:layout_marginLeft="5dp"
                 android:nextFocusDown="@+id/strasseInput" />
         </TableRow>
 
@@ -130,12 +134,13 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="text"
                 android:id="@+id/strasseInput"
                 android:hint="Straße"
                 android:textColorHint="#393a38"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="0dp"
@@ -146,15 +151,17 @@
             <!-- Column 2 Hausnummer -->
             <EditText
                 android:layout_width="75dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="text"
                 android:id="@+id/hausnummerInput"
                 android:hint="Nr."
                 android:textColorHint="#393a38"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:textSize="16dip"
                 android:typeface="normal"
+                android:layout_marginLeft="5dp"
                 android:nextFocusDown="@+id/plzInput"/>
         </TableRow>
     </TableLayout>
@@ -176,12 +183,13 @@
             <!-- Column 1 PLZ -->
             <EditText
                 android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="number"
                 android:id="@+id/plzInput"
                 android:hint="PLZ"
                 android:textColorHint="#393a38"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="0dp"
@@ -193,16 +201,18 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
                 android:inputType="text"
                 android:id="@+id/stadtInput"
                 android:hint="Stadt"
                 android:textColorHint="#393a38"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:textSize="16dip"
                 android:typeface="normal"
-                android:nextFocusDown="@+id/emailInput"/>
+                android:layout_marginLeft="5dp"
+                android:nextFocusDown="@+id/emailInput"
+                android:layout_height="40dp"
+                android:background="@drawable/back"/>
         </TableRow>
     </TableLayout>
 
@@ -248,12 +258,13 @@
                 android:id="@+id/emailInput"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="textEmailAddress"
                 android:hint="E-Mail-Adresse"
                 android:textColorHint="#393a38"
                 android:textSize="16dip"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:nextFocusDown="@+id/usernameInput"/>
         </TableRow>
@@ -270,7 +281,8 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="text"
                 android:id="@+id/usernameInput"
                 android:hint="Username"
@@ -278,7 +290,7 @@
                 android:layout_centerHorizontal="true"
                 android:textSize="16dip"
                 android:typeface="normal"
-                android:gravity="center|center_horizontal"
+                android:gravity="center"
                 android:nextFocusDown="@+id/registerPasswortInput"/>
         </TableRow>
 
@@ -303,25 +315,28 @@
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="textPassword"
                 android:id="@+id/registerPasswortInput"
                 android:hint="Passwort"
                 android:textColorHint="#393a38"
                 android:textSize="16dip"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:nextFocusDown="@+id/passwortWdhInput"/>
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/back"
                 android:inputType="textPassword"
                 android:id="@+id/passwortWdhInput"
                 android:hint="Passwort Wdh."
                 android:textColorHint="#393a38"
                 android:textSize="16dip"
-                android:gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
                 android:imeOptions="actionSend"/>
 
         </TableRow>

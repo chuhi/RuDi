@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             }
         };
 
-        String[] fragmentTitles = new String[]{"Home", "Was ist RuDi?", "Dein Profil", "Dein RuDi", "RuDi suchen", "RuDi anlegen", "Logout"};
+        String[] fragmentTitles = new String[]{"Meine RuDi's", "RuDi finden", "RuDi anlegen", "Hilfe? Was ist RuDi?", "Mein Profil", "Logout"};
 
         // Set the adapter for the list view
         drawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, fragmentTitles));
@@ -98,51 +98,43 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         FragmentManager fragmentManager = getFragmentManager();
 
-        // Call fragment Start
+        // Call fragment Your RuDi's
         if (position == 0) {
-            fragmentManager.beginTransaction().replace(
-                    R.id.container, new StartFragment()
-            ).commit();
-        }
-
-        // Call fragment About
-        if (position == 1) {
-            fragmentManager.beginTransaction().replace(
-                    R.id.container, new AboutFragment()
-            ).commit();
-        }
-        
-        // Call fragment Profil
-        if (position == 2) {
-            fragmentManager.beginTransaction().replace(
-                    R.id.container, new ProfilFragment()
-            ).commit();
-        }
-
-        // Call fragment Dein RuDi
-        if (position == 3) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new YourRuDiFragment()
             ).commit();
         }
 
-        // Call fragment RuDi Suchen
-        if (position == 5) {
+        // Call fragment Search RuDi
+        if (position == 1) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new RuDiSearchFragment()
             ).commit();
         }
-
-        // Call fragment RuDi anlegen
-        if (position == 5) {
+        
+        // Call fragment Create RuDi
+        if (position == 2) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new RudiCreateFragment()
             ).commit();
         }
 
+        // Call fragment Help/About
+        if (position == 3) {
+            fragmentManager.beginTransaction().replace(
+                    R.id.container, new AboutFragment()
+            ).commit();
+        }
+
+        // Call fragment Profil
+        if (position == 4) {
+            fragmentManager.beginTransaction().replace(
+                    R.id.container, new ProfilFragment()
+            ).commit();
+        }
 
         // Logout
-        if (position == 6) {
+        if (position == 5) {
             Intent toLoginActivity = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(toLoginActivity);
         }

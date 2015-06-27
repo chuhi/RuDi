@@ -1,8 +1,12 @@
 package de.rudi.fragments;
 
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import de.rudi.R;
+import de.rudi.activities.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,7 +59,6 @@ public class RudiCreateFragment extends Fragment {
 
                 mDatum.setText(dateFormat.format(c.getTime()));
             }
-
         };
 
         // Aufruf Date Picker
