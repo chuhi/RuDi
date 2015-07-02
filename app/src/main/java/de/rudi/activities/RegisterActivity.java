@@ -118,7 +118,7 @@ public class RegisterActivity extends Activity {
         //create dialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Abbrechen");
-        dialogBuilder.setMessage("Wollen sie wirklich Abbrechen?");
+        dialogBuilder.setMessage("Willst du wirklich Abbrechen?");
         dialogBuilder.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

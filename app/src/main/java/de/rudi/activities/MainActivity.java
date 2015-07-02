@@ -1,6 +1,9 @@
 package de.rudi.activities;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
@@ -46,7 +49,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             }
         };
 
-        String[] fragmentTitles = new String[]{"Meine RuDi's", "RuDi finden", "RuDi anlegen", "Hilfe? Was ist RuDi?", "Mein Profil", "Logout"};
+        String[] fragmentTitles = new String[]{"Home", "Meine RuDi's", "RuDi finden", "RuDi anlegen", "Hilfe? Was ist RuDi?", "Mein Profil", "Logout"};
 
         // Set the adapter for the list view
         drawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, fragmentTitles));
@@ -98,43 +101,50 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         FragmentManager fragmentManager = getFragmentManager();
 
-        // Call fragment Your RuDi's
+        // Call fragment Home
         if (position == 0) {
+            fragmentManager.beginTransaction().replace(
+                    R.id.container, new StartFragment()
+            ).commit();
+        }
+
+        // Call fragment Your RuDi's
+        if (position == 1) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new YourRuDiFragment()
             ).commit();
         }
 
         // Call fragment Search RuDi
-        if (position == 1) {
+        if (position == 2) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new RuDiSearchFragment()
             ).commit();
         }
         
         // Call fragment Create RuDi
-        if (position == 2) {
+        if (position == 3) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new RudiCreateFragment()
             ).commit();
         }
 
         // Call fragment Help/About
-        if (position == 3) {
+        if (position == 4) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new AboutFragment()
             ).commit();
         }
 
         // Call fragment Profil
-        if (position == 4) {
+        if (position == 5) {
             fragmentManager.beginTransaction().replace(
                     R.id.container, new ProfilFragment()
             ).commit();
         }
 
         // Logout
-        if (position == 5) {
+        if (position == 6) {
             Intent toLoginActivity = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(toLoginActivity);
         }
@@ -149,4 +159,6 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 R.id.container, new StartFragment()
         ).commit();
     }
+
+
 }

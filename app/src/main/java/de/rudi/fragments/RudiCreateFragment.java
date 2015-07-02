@@ -4,6 +4,7 @@ package de.rudi.fragments;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.FragmentTransaction;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,15 +13,19 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import de.rudi.R;
 import de.rudi.activities.LoginActivity;
+import de.rudi.activities.MainActivity;
+import de.rudi.activities.RegisterActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +34,8 @@ public class RudiCreateFragment extends Fragment {
 
     private EditText mDatum;
     private EditText mUhrzeit;
+    private Button mCreate;
+    private Button mCancel;
 
     public RudiCreateFragment() {
         // Required empty public constructor
@@ -43,6 +50,8 @@ public class RudiCreateFragment extends Fragment {
 
         mDatum = (EditText) view.findViewById(R.id.datum);
         mUhrzeit = (EditText) view.findViewById(R.id.uhrzeit);
+        mCreate = (Button) view.findViewById(R.id.rudiAnlegenButton);
+        mCancel = (Button) view.findViewById(R.id.cancelButton);
 
         // Java Kalender abrufen
         final Calendar c = Calendar.getInstance();
@@ -98,7 +107,53 @@ public class RudiCreateFragment extends Fragment {
             }
         });
 
+        mCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"Dein Dinner wurde angelegt",Toast.LENGTH_LONG).show();
+
+                Fragment fYour = new YourRuDiFragment();
+                FragmentTransaction change = getFragmentManager().beginTransaction();
+                change.replace(R.id.container, fYour);
+                change.addToBackStack(null);
+                change.commit();
+            }
+        });
+
+        mCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = setDialog();
+                dialog.show();
+            }
+        });
+
         return view;
+    }
+
+    public Dialog setDialog(){
+        //create dialog
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+        dialogBuilder.setTitle("Abbrechen");
+        dialogBuilder.setMessage("Willst du wirklich Abbrechen?");
+        dialogBuilder.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Redirect to Main activity
+                Intent toMainActivity = new Intent(getActivity(), MainActivity.class);
+                startActivity(toMainActivity);
+            }
+        });
+        dialogBuilder.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //closes Dialog without other actions
+            }
+        });
+
+        // create dialog
+        Dialog dialog = dialogBuilder.create();
+        return dialog;
     }
 
 

@@ -92,7 +92,7 @@ public class LoginActivity extends ActionBarActivity {
 
         // Implement user authentication here
         // Authentication succeeds when username equals password
-        if (!username.equals("") && username.equals(password)) {
+        if (!username.equals("") && password.equals("123456")) {
             Toast.makeText(LoginActivity.this, "Login erfolgreich!", Toast.LENGTH_LONG).show();
             Intent toMainActivity = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(toMainActivity);

@@ -2,18 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="de.rudi.fragments.YourRuDiFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
     <ImageView
-        android:layout_width="525dp"
-        android:layout_height="701dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/imageView4"
         android:layout_gravity="center"
         android:src="@drawable/your_rudi"
-        android:minHeight="600dp"
-        android:minWidth="400dp"
+        android:minHeight="568dp"
+        android:minWidth="320dp"
         android:nestedScrollingEnabled="false" />
 
 
